@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome Page</title>
+</head>
+<body>
+    <div>
+        <h1>Welcome, <span th:text="${mybatisTest.name}">name</span>!</h1>
+        <h1>phone:<span th:text="${mybatisTest.phone}">phone</span></h1>
+        <h1>email:<span th:text="${mybatisTest.email}">email</span></h1>
+    </div>
+    <table>
+        <tr>
+            <th>NAME</th>
+            <th>PHONE</th>
+            <th>EMAIL</th>
+        </tr>
+        <tr th:each="item : ${mybatisTestList}">
+            <td th:text="${item.name}">name</td>
+            <td th:text="${item.phone}">phone</td>
+            <td th:text="${item.email}">email</td>
+        </tr>
+    </table>
+</body>
+</html>
